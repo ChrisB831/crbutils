@@ -13,12 +13,16 @@ ref folder with reference data and models for Testing and dev for three model ex
  * Models 
         
 
-Package libray
+** Have a read through tmy Deliveroo job project and see what I can use from there **
+
+Package library
 * eda
   * missings
   * distributions
   * pandas report
 * preprop (general preprocessing)
+  * clipping
+  * replace missing
 * utils (general functionality)
 * modeval
   * feat_imp
