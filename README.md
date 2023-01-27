@@ -13,7 +13,7 @@ ref folder with refernce data and nodels for Testing and dev for three model exa
  * Models 
         
 
-Packahe libray
+Package libray
 * eda
   * missings
   * distributions
