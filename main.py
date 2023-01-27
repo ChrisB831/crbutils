@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.impute import SimpleImputer
 
-from src.crbutils import modeval
+from src.crbutils.modeval import perf_mets
 
 '''
 As we are building model build utility functions a good starting
@@ -62,3 +62,6 @@ print(type(y))
 print(type(y_pred))
 print(y[:5])
 print(y_pred[:5])
+
+
+perf_mets()
