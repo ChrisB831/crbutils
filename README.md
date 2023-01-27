@@ -2,7 +2,7 @@
 A DS utility function library
 
 
-ref folder with refernce data and nodels for Testing and dev for three model examples
+ref folder with reference data and models for Testing and dev for three model examples
 * Continuous
 * Binary classifier
 * Multilevel classifier
