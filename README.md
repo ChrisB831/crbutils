@@ -29,7 +29,8 @@ Package library
   * lorenz_curve
   * gains_curve
   * conf_matrix
+  * Scatter plot
   * perf_metrics returns perf metrics based on model
-    * mae rms r2 etc. for continuous
+    * ~mae rms r2 etc. for continuous
     * F1 prec recall etc. for binary
     * Accuracy for binary 

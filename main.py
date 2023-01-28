@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.impute import SimpleImputer
 
-from src.crbutils.modeval import perf_mets
+from src.crbutils.modeval import performance_metrics
 
 '''
 As we are building model build utility functions a good starting
@@ -49,19 +49,15 @@ X = df[['minimum_nights','number_of_reviews','availability_365','reviews_per_mon
 my_imputer = SimpleImputer(strategy="mean")
 X = my_imputer.fit_transform(X)
 
+# Split into TTV - TBD
+
 # Initialise the model (Random forest)
 rf_model = RandomForestRegressor()
 
 # Train the model
 rf_model.fit(X,y)
 
-# Score the training data
+# Score the datasets
 y_pred = rf_model.predict(X)
 
-print(type(y))
-print(type(y_pred))
-print(y[:5])
-print(y_pred[:5])
-
-
-perf_mets()
+performance_metrics(y_train = y, y_train_p=y_pred)
