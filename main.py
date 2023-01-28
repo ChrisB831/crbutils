@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.impute import SimpleImputer
 
-from src.crbutils.modeval import performance_metrics
+from src.crbutils.modeval import performance_metrics, reg_scatter_plot
 
 '''
 As we are building model build utility functions a good starting
@@ -60,4 +60,8 @@ rf_model.fit(X,y)
 # Score the datasets
 y_pred = rf_model.predict(X)
 
+# Get the performance metrics
 performance_metrics(y_train = y, y_train_p=y_pred)
+
+# Get plot of actual v expected
+reg_scatter_plot(y_train = y, y_train_p=y_pred)

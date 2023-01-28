@@ -8,6 +8,9 @@ import numpy as np
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from sklearn.metrics import confusion_matrix, classification_report
+import plotly.express as px
+import plotly.io as pio
+import plotly.graph_objects as go
 
 
 def performance_metrics(
@@ -31,6 +34,8 @@ def performance_metrics(
 
     output:
         None
+
+    TODO - Put the classification functionality into a sub function (reduce duplication)
     '''
     print("Headline performance metrics")
 
@@ -66,6 +71,7 @@ def performance_metrics(
             print(f"\tValidation:\t{np.sqrt(mean_squared_error(y_valid, y_valid_p)):.4f}")
         if y_test is not None and y_test_p is not None:
             print(f"\tTest:\t\t{np.sqrt(mean_squared_error(y_test, y_test_p)):.4f}")
+
 
     if model_type == "binary_class":
         print("Accuracy")
@@ -111,6 +117,7 @@ def performance_metrics(
             print("\nTest")
             print(classification_report(y_test, y_test_p, digits=4))
 
+
     if model_type == "multi_class":
         print("Accuracy")
         if y_train is not None and y_train_p is not None:
@@ -131,3 +138,66 @@ def performance_metrics(
             print("\nTest")
             print(classification_report(y_test, y_test_p, digits=4))
 
+
+
+def reg_scatter_plot(
+        y_train=None, y_train_p=None,
+        y_valid=None, y_valid_p=None,
+        y_test=None, y_test_p=None):
+    '''Get a simple scatter plot of actual v predicted
+
+    input:
+        y_train: Pandas series or numpy array (default = None). Traing data labels
+        y_train_p: Pandas series or numpy array (default = None). Training data predictions
+        y_valid: Pandas series or numpy array (default = None). Validation data label
+        y_valid_p: Pandas series or numpy array (default = None). Validation data predictions
+        y_test: Pandas series or numpy array (default = None). Validation data labels
+        y_test_p: Pandas series or numpy array (default = None). Training data predictions
+
+    output:
+        None
+
+    TODO: Check the datasets, sample down if required
+    TODO: Return the fig object
+    '''
+
+    fig = go.Figure()
+
+    # Train
+    if y_train is not None and y_train_p is not None:
+        fig.add_trace(go.Scatter(x=y_train,
+                                 y=y_train_p,
+                                 name='Train',
+                                 mode='markers',
+                                 marker_size=4,
+                                 marker_color='Red'))
+
+    # Valid
+    if y_valid is not None and y_valid_p is not None:
+        fig.add_trace(go.Scatter(x=y_valid,
+                                 y=y_valid_p,
+                                 name='Valid',
+                                 mode='markers',
+                                 marker_size=4,
+                                 marker_color='Green'))
+
+    # Test
+    if y_test is not None and y_test_p is not None:
+        fig.add_trace(go.Scatter(x=y_test,
+                                 y=y_test_p,
+                                 name='Test',
+                                 mode='markers',
+                                 marker_size=4,
+                                 marker_color='Blue'))
+
+    # Tidy up chart
+    fig.update_xaxes(title='Actual')
+    fig.update_yaxes(title='Predicted')
+    # fig.update_xaxes(range=[0, 1])
+    # fig.update_yaxes(range=[0, 1])
+    fig.update_layout(template="none",  # "seaborn" or "simple_white"
+                      autosize=False,
+                      width=800,
+                      height=800)
+
+    fig.show()
