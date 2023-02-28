@@ -55,7 +55,8 @@ jobs:
 
     # Copy wheel from dist folder in Git virtual environment to local tmp folder
     - name: tmp
-      run: dir C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
-      run: dir .\dist
-      run: cp .\dist\*.whl c:\tmp
+      run: | 
+        dir C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
+        dir .\dist
+        cp .\dist\*.whl c:\tmp
 
