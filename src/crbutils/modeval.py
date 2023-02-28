@@ -15,6 +15,8 @@ from sklearn.metrics import classification_report
 import plotly.graph_objects as go
 
 
+
+
 def performance_metrics(
         model_type="reg",
         y_train=None, y_train_p=None,
@@ -47,6 +49,7 @@ def performance_metrics(
 
     TODO - Put the classification functionality into a sub function
         (reduce duplication)
+        Flake8 C901 'performance_metrics' is too complex (37)
     '''
     print("Headline performance metrics")
 
