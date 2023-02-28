@@ -53,6 +53,9 @@ jobs:
       run: poetry build --format wheel
 
 
-    # Copy wheel to live folder
+    # Copy wheel from dist folder in Git virtual environment to local tmp folder
     - name: tmp
       run: dir C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
+      run: dir .\dist
+      run: cp .\dist\*.whl c:\tmp
+
