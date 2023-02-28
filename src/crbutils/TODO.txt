@@ -1,0 +1,5 @@
+Sample module
+Get a sample function that takes train_test_split and returns train test AND valdation
+
+IO module
+Read in a rreturn a json config file

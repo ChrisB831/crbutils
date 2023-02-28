@@ -201,3 +201,13 @@ def reg_scatter_plot(
                       height=800)
 
     fig.show()
+
+
+
+'''
+Confusion matrix autoplot
+
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+cm = confusion_matrix(y_test, pred, labels=[0, 1])
+ConfusionMatrixDisplay(cm, display_labels=["unacc", "acc"]).plot()
+'''
