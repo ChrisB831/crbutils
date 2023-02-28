@@ -65,9 +65,9 @@ jobs:
         dir .\dist
 
     # Get content of virtualenv folder
-    - name: get contents of dist folder
+    - name: get contents of virtualenv folder
       run: |        
-        C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
+        dir C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
 
 
     # Try to access local machine
