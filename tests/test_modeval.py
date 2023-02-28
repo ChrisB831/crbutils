@@ -29,13 +29,13 @@ def test_always_pass():
     assert True
 
 
-def test_always_fail():
-    '''Dummy test that always fails
-    Useful for testing the CI functionality
-
-    Inputs:
-        none
-    Outputs:
-        none
-    '''
-    assert False
+# def test_always_fail():
+#     '''Dummy test that always fails
+#     Useful for testing the CI functionality
+#
+#     Inputs:
+#         none
+#     Outputs:
+#         none
+#     '''
+#     assert False
