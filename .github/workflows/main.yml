@@ -55,14 +55,20 @@ jobs:
 
 
     # Get the current working directory in Git virtual environment to local tmp folder
-    - name: printcwd
-      run: | 
-        chdir
+#    - name: printcwd
+#      run: |
+#        chdir
 
     # Get content of dist folder
     - name: get contents of dist folder
       run: | 
         dir .\dist
+
+    # Get content of virtualenv folder
+    - name: get contents of dist folder
+      run: |        
+        C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
+
 
     # Try to access local machine
     # This fails with Cannot find path 'C:\Christopher\tmp' because it does not exist.
