@@ -53,17 +53,21 @@ jobs:
       run: poetry build --format wheel
 
 
-    # Copy wheel from dist folder in Git virtual environment to local tmp folder
+
+    # Get the current working directory in Git virtual environment to local tmp folder
     - name: printcwd
       run: | 
         chdir
 
+    # Get content of dist folder
     - name: get contents of dist folder
       run: | 
         dir .\dist
 
-
-    - name: get contents of local machine
-      run: | 
-        dir C:\Christopher\tmp
+    # Try to access local machine
+    # This fails with Cannot find path 'C:\Christopher\tmp' because it does not exist.
+    # Q) How do i copy the .whl file to my local machine
+#    - name: get contents of local machine
+#      run: |
+#        dir C:\Christopher\tmp
 
