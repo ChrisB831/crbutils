@@ -17,13 +17,15 @@ ref folder with reference data and models for Testing and dev for three model ex
 NB to minimise load to GDrive, then venv is stored locally at
 `C:\Users\Christopher\venvs\crbutils`
 
+
+
 # TODO
 
 ## CI / CD
 * CI func
   * Flake8
   * And pytest
-  * Add GHithub actions
+  * Add Github actions
 * CD func
   * Increment build number
   * Hydra config file
@@ -53,6 +55,8 @@ Incorporate test functionality
 ### preprop module 
 * clipping
 * replace missing
+
+
 
 ## modeval module
 * feat_imp
