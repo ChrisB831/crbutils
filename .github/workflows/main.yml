@@ -65,7 +65,8 @@ jobs:
     # Get content of virtualenv  folder
     - name: get contents of virtualenv folder
       run: |        
-        dir C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
+#        dir C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
+        dir C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs\crbutils-yGvJNmyj-py3.9
 
 
     # Try to access local machine
