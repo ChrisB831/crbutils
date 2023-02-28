@@ -54,9 +54,17 @@ jobs:
 
 
     # Copy wheel from dist folder in Git virtual environment to local tmp folder
-    - name: tmp
+    - name: printcwd
       run: | 
-        pwd
+        chdir
         dir .\dist
-        # cp .\dist\*.whl C:\Christopher\tmp
+
+    - name: get contents of dist folder
+      run: | 
+        dir .\dist
+
+
+    - name: get contents of local machine
+      run: | 
+        dir C:\Christopher\tmp
 
