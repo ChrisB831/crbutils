@@ -52,8 +52,6 @@ jobs:
     - name: Create wheel with poetry
       run: poetry build --format wheel
 
-
-
     # Get the current working directory in Git virtual environment to local tmp folder
 #    - name: printcwd
 #      run: |
@@ -64,7 +62,7 @@ jobs:
       run: | 
         dir .\dist
 
-    # Get content of virtualenv folder
+    # Get content of virtualenv  folder
     - name: get contents of virtualenv folder
       run: |        
         dir C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
