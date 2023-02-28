@@ -1,3 +1,16 @@
+'''
+Development interface with crbutils
+
+Author: Christopher Bonham
+Date: 28th January 2023
+
+As we are building model build utility functions a good starting
+point would be to build a model long hand and then bit by bit
+replace the long hand code with calls to the utility functions
+'''
+
+
+
 import wandb
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor

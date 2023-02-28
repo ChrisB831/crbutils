@@ -1,5 +1,5 @@
 '''
-Test script for the module XXXXX
+Test script for the modeval.py
 
 AUTHOR: Christopher Bonham
 DATE:   28th February 2023
