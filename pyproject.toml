@@ -6,7 +6,6 @@ authors = ["Christopher Bonham"]
 readme = "README.md"
 packages = [{include = "crbutils", from = "src"}]
 
-# We need to cut out the unwanted dependancies
 [tool.poetry.dependencies]
 python = "3.9.13"
 plotly = ">=5.13.1"
