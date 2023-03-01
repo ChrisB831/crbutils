@@ -13,7 +13,7 @@ To run all test scripts
 
 To run this script in isolation
 1) Go to the project root
-2) python -m pytest .\tests\test_1.py -vv
+2) python -m pytest .\tests\test_modeval.py -vv
 '''
 
 
