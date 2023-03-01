@@ -16,12 +16,6 @@ from sklearn.impute import SimpleImputer
 
 from src.crbutils.modeval import performance_metrics, reg_scatter_plot
 
-'''
-As we are building model build utility functions a good starting
-point would be to build a model long hand and then bit by bit
-replace the long hand code with calls to the utility functions
-'''
-
 
 def download_data():
     '''Import dummy training data from wandb, import to a dataframe
