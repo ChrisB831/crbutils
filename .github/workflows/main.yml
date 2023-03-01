@@ -52,20 +52,31 @@ jobs:
     - name: Create wheel with poetry
       run: poetry build --format wheel
 
+    # Run Poetry to publish the wheel to PyPi
+    # https://docs.github.com/en/actions/security-guides/encrypted-secrets
+    - name: Publish
+      - shell: pwsh
+        env:
+          UNAME: ${{ secrets.UNAME }}
+          PWORD: ${{ secrets.PWORD }}
+        run: poetry publish --username "$env:UNAME" --password "$env:PWORD"
+
+
     # Get the current working directory in Git virtual environment to local tmp folder
 #    - name: printcwd
 #      run: |
 #        chdir
 
     # Get content of dist folder
-    - name: get contents of dist folder
-      run: | 
-        dir .\dist
+    # The .whl file is created here, but I cant download it to my local machine
+#    - name: get contents of dist folder
+#      run: |
+#        dir .\dist
 
     # Get content of virtualenv folder
-    - name: get contents of virtualenv folder
-      run: |        
-        dir C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs\crbutils-yGvJNmyj-py3.9
+#    - name: get contents of virtualenv folder
+#      run: |
+#        dir C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs\crbutils-yGvJNmyj-py3.9
 
 
     # Try to access local machine
