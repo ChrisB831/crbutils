@@ -32,11 +32,11 @@ jobs:
       with:
         python-version: 3.9.13
     
-    # Install dependencies
+    # Install dependencies required for this workflow
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest poetry
+        pip install flake8 pytest poetry, toml
         
     # Run the Flake8 linter
     - name: Lint with flake8
