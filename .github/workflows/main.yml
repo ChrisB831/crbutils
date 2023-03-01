@@ -54,12 +54,16 @@ jobs:
 
     # Run Poetry to publish the wheel to PyPi
     # https://docs.github.com/en/actions/security-guides/encrypted-secrets
-    - name: Publish
-      - shell: pwsh
-        env:
-          UNAME: ${{ secrets.UNAME }}
-          PWORD: ${{ secrets.PWORD }}
-        run: poetry publish --username "$env:UNAME" --password "$env:PWORD"
+#    - name: Publish
+#      - shell: pwsh
+#        env:
+#          UNAME: ${{ secrets.UNAME }}
+#          PWORD: ${{ secrets.PWORD }}
+#        run: poetry publish --username "$env:UNAME" --password "$env:PWORD"
+
+    - name: Publish to PyPi
+        run: poetry publish --username "${{ secrets.UNAME }}" --password "${{ secrets.PWORD }}"
+
 
 
     # Get the current working directory in Git virtual environment to local tmp folder
