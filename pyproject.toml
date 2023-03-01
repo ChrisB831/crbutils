@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "crbutils"
-version = "1.0.0"       # Make sure you ALSO change the version in __init__.py
+version = "1.0.1"       # Make sure you ALSO change the version in __init__.py
 description = "A DS utility library"
 authors = ["Christopher Bonham"]
 readme = "README.md"
