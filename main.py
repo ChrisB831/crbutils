@@ -15,6 +15,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.impute import SimpleImputer
 
 from src.crbutils.modeval import performance_metrics, reg_scatter_plot
+from src.crbutils.sample import randomise
 
 
 def download_data():
@@ -44,29 +45,39 @@ def read_data():
 df = read_data()
 
 
-# Extract features and labels
-y = df['price']
-X = df[['minimum_nights', 'number_of_reviews',
-        'availability_365', 'reviews_per_month']]
+# Print first 10 records
+print(df.head(10))
+
+# Randomise the dataset
+df = randomise(df)
+print(df.head(10))
 
 
-# Fill missings with mean
-my_imputer = SimpleImputer(strategy="mean")
-X = my_imputer.fit_transform(X)
-
-# Split into TTV - TBD
-
-# Initialise the model (Random forest)
-rf_model = RandomForestRegressor()
-
-# Train the model
-rf_model.fit(X, y)
-
-# Score the datasets
-y_pred = rf_model.predict(X)
-
-# Get the performance metrics
-performance_metrics(y_train=y, y_train_p=y_pred)
-
-# Get plot of actual v expected
-reg_scatter_plot(y_train=y, y_train_p=y_pred)
+#
+#
+# # Extract features and labels
+# y = df['price']
+# X = df[['minimum_nights', 'number_of_reviews',
+#         'availability_365', 'reviews_per_month']]
+#
+#
+# # Fill missings with mean
+# my_imputer = SimpleImputer(strategy="mean")
+# X = my_imputer.fit_transform(X)
+#
+# # Split into TTV - TBD
+#
+# # Initialise the model (Random forest)
+# rf_model = RandomForestRegressor()
+#
+# # Train the model
+# rf_model.fit(X, y)
+#
+# # Score the datasets
+# y_pred = rf_model.predict(X)
+#
+# # Get the performance metrics
+# performance_metrics(y_train=y, y_train_p=y_pred)
+#
+# # Get plot of actual v expected
+# reg_scatter_plot(y_train=y, y_train_p=y_pred)

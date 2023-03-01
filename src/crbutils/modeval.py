@@ -15,11 +15,6 @@ from sklearn.metrics import classification_report
 import plotly.graph_objects as go
 
 
-def tmp_print_message():
-    '''Testy the package remove before go love'''
-    print("Hello Chris")
-
-
 def performance_metrics(
         model_type="reg",
         y_train=None, y_train_p=None,
