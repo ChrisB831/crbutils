@@ -1,9 +1,13 @@
 # This workflow will execute on a push to main and will .....
-# 1) Run on an Ubuntu unevironment
-# 2) Install Python 3.8
-# 3) Install the dependencies from the requirements.txt file
+# 1) Run on a windows environment
+# 2) Install Python 3.9.13
+# 3) Install the dependencies
 # 4) Run flake8 
 # 5) Run all test scripts
+# On success of Linting and Testing
+# 6) Create a built distribution
+# 7) Upload the PyPi
+
 
 name: crbutils_CI
 
@@ -54,39 +58,5 @@ jobs:
 
     # Run Poetry to publish the wheel to PyPi
     # https://docs.github.com/en/actions/security-guides/encrypted-secrets
-#    - name: Publish
-#      - shell: pwsh
-#        env:
-#          UNAME: ${{ secrets.UNAME }}
-#          PWORD: ${{ secrets.PWORD }}
-#        run: poetry publish --username "$env:UNAME" --password "$env:PWORD"
-
     - name: Publish to PyPi
       run: poetry publish --username "${{ secrets.UNAME }}" --password "${{ secrets.PWORD }}"
-#      run: poetry publish
-
-
-    # Get the current working directory in Git virtual environment to local tmp folder
-#    - name: printcwd
-#      run: |
-#        chdir
-
-    # Get content of dist folder
-    # The .whl file is created here, but I cant download it to my local machine
-#    - name: get contents of dist folder
-#      run: |
-#        dir .\dist
-
-    # Get content of virtualenv folder
-#    - name: get contents of virtualenv folder
-#      run: |
-#        dir C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs\crbutils-yGvJNmyj-py3.9
-
-
-    # Try to access local machine
-    # This fails with Cannot find path 'C:\Christopher\tmp' because it does not exist.
-    # Q) How do i copy the .whl file to my local machine
-#    - name: get contents of local machine
-#      run: |
-#        dir C:\Christopher\tmp
-

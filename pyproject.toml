@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "crbutils"
-version = "0.3.0"
+version = "1.0.0"
 description = "A DS utility library"
 authors = ["Christopher Bonham"]
 readme = "README.md"
