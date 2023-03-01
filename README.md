@@ -21,16 +21,6 @@ NB to minimise load to GDrive, then venv is stored locally at
 
 # TODO
 
-## CI / CD
-* CI func
-  * Flake8
-  * And pytest
-  * Add Github actions
-* CD func
-  * Increment build number
-  * Hydra config file
-  * Create built distribution and copy to library
-
 
 
 ## Testing
@@ -43,6 +33,7 @@ Incorporate test functionality
 
 ### Sample module
 * Get a sample function that takes train_test_split and returns train test AND validation
+* Get jumble function - test that var stats still match
 
 ### IO module
 * Read in a return a json config file
@@ -87,5 +78,4 @@ https://docs.github.com/en/actions/learn-github-actions/understanding-github-act
 GitHub provides Ubuntu Linux, Microsoft Windows, and macOS runners to run your workflows; each workflow run executes in 
 a fresh, newly-provisioned virtual machine. GitHub also offers larger runners, which are available in larger 
 configurations."
-
 
