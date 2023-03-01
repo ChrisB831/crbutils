@@ -63,7 +63,7 @@ jobs:
 
     - name: Publish to PyPi
 #        run: poetry publish --username "${{ secrets.UNAME }}" --password "${{ secrets.PWORD }}"
-        run: poetry publish
+      run: poetry publish
 
 
     # Get the current working directory in Git virtual environment to local tmp folder
